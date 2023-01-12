@@ -3,11 +3,12 @@ import logger from './logger.mjs';
 import hand from './handle.mjs';
 
 class SocketClient {
-  constructor(symbol, timeout, baseUrl) {
+  constructor(symbol, num, timeout, baseUrl) {
     this.baseUrl = baseUrl || 'wss://stream.binance.com:9443/';
     this._symbol = symbol;
     this._path = 'ws/' + symbol +'@kline_1h';
     this._timeout = timeout || 5000;
+    this._num = num;
     this._createSocket();
     this._handlers = new Map();
   }
@@ -39,7 +40,7 @@ class SocketClient {
     this._ws.onmessage = (msg) => {
       try {
         const mes = JSON.parse(msg.data);
-        hand.handleData(this._symbol, mes);
+        hand.handleData(this._symbol, this._num, mes);
       } catch (e) {
         logger.warn('Parse message failed', e);
       }

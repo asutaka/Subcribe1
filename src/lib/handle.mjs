@@ -90,7 +90,7 @@ const listArr38 = arr38;
 const listArr39 = arr39;
 const listArr40 = arr40;
 
-const handleData = async (symbol, arr, data) => {
+const handleData = async (symbol, num, data) => {
     try{
         let _e = data.k.t;
         let _c = data.k.c;
@@ -101,27 +101,180 @@ const handleData = async (symbol, arr, data) => {
         let _q = data.k.q;
         let _ut = data.E;
         let _state = data.k.x;
-
+        
         if(_state == true){
-            arr.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
-            var filter = arrMirror.filter(x => x.name != symbol);
-            arrMirror = filter;
+            var index = arrMirror.findIndex(x => x.name == symbol);
+            if(index > -1)
+                arrMirror.splice(index, 1);
             arrMirror.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+
+            if(num == 1)
+            {
+                arr1.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 2)
+            {
+                arr2.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 3)
+            {
+                arr3.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 4)
+            {
+                arr4.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 5)
+            {
+                arr5.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 6)
+            {
+                arr6.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 7)
+            {
+                arr7.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 8)
+            {
+                arr8.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 9)
+            {
+                arr9.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 10)
+            {
+                arr10.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 11)
+            {
+                arr11.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 12)
+            {
+                arr12.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 13)
+            {
+                arr13.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 14)
+            {
+                arr14.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 15)
+            {
+                arr15.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 16)
+            {
+                arr16.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 17)
+            {
+                arr17.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 18)
+            {
+                arr18.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 19)
+            {
+                arr19.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 20)
+            {
+                arr20.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 21)
+            {
+                arr21.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 22)
+            {
+                arr22.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 23)
+            {
+                arr23.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 24)
+            {
+                arr24.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 25)
+            {
+                arr25.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 26)
+            {
+                arr26.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 27)
+            {
+                arr27.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 28)
+            {
+                arr28.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 29)
+            {
+                arr29.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 30)
+            {
+                arr30.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 31)
+            {
+                arr31.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 32)
+            {
+                arr32.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 33)
+            {
+                arr33.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 34)
+            {
+                arr34.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 35)
+            {
+                arr35.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 36)
+            {
+                arr36.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 37)
+            {
+                arr37.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 38)
+            {
+                arr38.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 39)
+            {
+                arr39.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
+            else if(num == 40)
+            {
+                arr40.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
+            }
         }
         else
         {
-            var item = arrCurrent.find(x => x.name == symbol);
-            if(item == null || item == 'undefined'){
-                arrCurrent.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
-            }
-            else{
-                var allowUpdate = (new Date()).getSeconds()%3;
-                if(allowUpdate == 0){
-                    var filter = arrCurrent.filter(x => x.name != symbol);
-                    arrCurrent = filter;
-                    arrCurrent.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
-                }
-            }
+            var index = arrCurrent.findIndex(x => x.name == symbol);
+            if(index > -1)
+                arrCurrent.splice(index, 1);
+            arrCurrent.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
         }
     }
     catch(e)
