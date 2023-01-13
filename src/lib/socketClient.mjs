@@ -31,6 +31,9 @@ class SocketClient {
 
     this._ws.onclose = () => {
       logger.warn('ws closed');
+      setTimeout(() => {
+        this._createSocket();
+      }, 5000);
     };
 
     this._ws.onerror = (err) => {

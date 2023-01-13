@@ -2,7 +2,9 @@ import SocketClient from './lib/socketClient.mjs';
 import express from "express";
 import cronjob from './cronjob.mjs';
 import handle from "./lib/handle.mjs";
+import bodyParser from 'body-parser';
 
+var jsonParser = bodyParser.json()
 const PORT = 8000;
 const app = express();
 app.get('/', async (req, res)  => {
@@ -13,6 +15,111 @@ app.listen(PORT, () => console.log('server running!'));
 //Job
 cronjob.SyncData();
 //API
+app.post('/syncDataClient/:value', jsonParser,function (req, res) {
+    try{
+        handle.setFlag(req.params.value);
+        return res.status(200).json({msg: "success", code: -99 });
+    }
+    catch(e)
+    {
+        handle.setFlag(req.params.value);
+        return res.status(200).json({msg: "error", code: -99 });
+    }
+});
+
+app.post('/syncDataClientVal', jsonParser,function (req, res) {
+    try{
+        var data = req.body;
+        var num = data.num;
+        if(num == 1)
+        handle.listArr1 = data.data;
+        if(num == 2)
+        handle.listArr2 = data.data;
+        if(num == 3)
+        handle.listArr3 = data.data;
+        if(num == 4)
+        handle.listArr4 = data.data;
+        if(num == 5)
+        handle.listArr5 = data.data;
+        if(num == 6)
+        handle.listArr6 = data.data;
+        if(num == 7)
+        handle.listArr7 = data.data;
+        if(num == 8)
+        handle.listArr8 = data.data;
+        if(num == 9)
+        handle.listArr9 = data.data;
+        if(num == 10)
+        handle.listArr10 = data.data;
+        if(num == 11)
+        handle.listArr11 = data.data;
+        if(num == 12)
+        handle.listArr12 = data.data;
+        if(num == 13)
+        handle.listArr13 = data.data;
+        if(num == 14)
+        handle.listArr14 = data.data;
+        if(num == 15)
+        handle.listArr15 = data.data;
+        if(num == 16)
+        handle.listArr16 = data.data;
+        if(num == 17)
+        handle.listArr17 = data.data;
+        if(num == 18)
+        handle.listArr18 = data.data;
+        if(num == 19)
+        handle.listArr19 = data.data;
+        if(num == 20)
+        handle.listArr20 = data.data;
+        if(num == 21)
+        handle.listArr21 = data.data;
+        if(num == 22)
+        handle.listArr22 = data.data;
+        if(num == 23)
+        handle.listArr23 = data.data;
+        if(num == 24)
+        handle.listArr24 = data.data;
+        if(num == 25)
+        handle.listArr25 = data.data;
+        if(num == 26)
+        handle.listArr26 = data.data;
+        if(num == 27)
+        handle.listArr27= data.data;
+        if(num == 28)
+        handle.listArr28 = data.data;
+        if(num == 29)
+        handle.listArr29 = data.data;
+        if(num == 30)
+        handle.listArr30 = data.data;
+        if(num == 31)
+        handle.listArr31 = data.data;
+        if(num == 32)
+        handle.listArr32 = data.data;
+        if(num == 33)
+        handle.listArr33 = data.data;
+        if(num == 34)
+        handle.listArr34 = data.data;
+        if(num == 35)
+        handle.listArr35 = data.data;
+        if(num == 36)
+        handle.listArr36 = data.data;
+        if(num == 37)
+        handle.listArr37 = data.data;
+        if(num == 38)
+        handle.listArr38 = data.data;
+        if(num == 39)
+        handle.listArr39 = data.data;
+        if(num == 40)
+        handle.listArr40 = data.data;
+        return res.status(200).json({msg: "success", code: 1 });
+    }
+    catch(e)
+    {
+        console.log(e);
+        return res.status(200).json({msg: "error", code: -99 });
+    }
+});
+
 app.get('/current', function(req, res) {
     res.status(200).json({data: handle.listCurrent });
 });
