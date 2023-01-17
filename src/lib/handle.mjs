@@ -106,6 +106,8 @@ const handleData = async (symbol, num, data) => {
         let _q = data.k.q;
         let _ut = data.E;
         let _state = data.k.x;
+
+        console.log("data", data);
         
         if(_state == true){
             var index = arrMirror.findIndex(x => x.name == symbol);
