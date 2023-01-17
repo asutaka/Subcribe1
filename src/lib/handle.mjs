@@ -97,7 +97,6 @@ const setFlag = (val) => {
 
 const handleData = async (symbol, num, data) => {
     try{
-        console.log("data", data);
         let _e = data.k.t;
         let _c = data.k.c;
         let _o = data.k.o;
