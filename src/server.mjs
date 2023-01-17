@@ -212,87 +212,45 @@ app.get('/symbol/:num', function(req, res) {
     return res.status(200).json({data: handle.listArr40 });
 });
 
-new SocketClient('btcusdt', 1, 3600000); //'btcusdt'
-new SocketClient('xrpusdt', 2, 3605000); //'xrpusdt'
-new SocketClient('eosusdt', 3, 3610000); //'eosusdt'
-new SocketClient('etcusdt', 4, 3615000); //'etcusdt'
-new SocketClient('ltcusdt', 5, 3620000); //'ltcusdt'
-new SocketClient('fetusdt', 6, 3625000); //'fetusdt'
-new SocketClient('omgusdt', 7, 3630000); //'omgusdt'
-new SocketClient('maticusdt', 8, 3635000); //'maticusdt'
-new SocketClient('oneusdt', 9, 3640000); //'oneusdt'
-new SocketClient('ftmusdt', 10, 3645000); //'ftmusdt'
-new SocketClient('algousdt', 11, 3650000); //'algousdt'
-new SocketClient('dogeusdt', 12, 3655000); //'dogeusdt'
-new SocketClient('busdusdt', 13, 3660000); //'busdusdt'
-new SocketClient('iotxusdt', 14, 3665000); //'iotxusdt'
-new SocketClient('ctxcusdt', 15, 3670000); //'ctxcusdt'
-new SocketClient('compusdt', 16, 3675000); //'compusdt'
-new SocketClient('lrcusdt', 17, 3680000); //'lrcusdt'
-new SocketClient('sxpusdt', 18, 3685000); //'sxpusdt'
-new SocketClient('balusdt', 19, 3690000); //'balusdt'
-new SocketClient('sandusdt', 20, 3695000); //'sandusdt'
-new SocketClient('ksmusdt', 21, 3700000); //'ksmusdt'
-new SocketClient('egldusdt', 22, 3705000); //'egldusdt'
-new SocketClient('uniusdt', 23, 3710000); //'uniusdt'
-new SocketClient('avaxusdt', 24, 3715000); //'avaxusdt'
-new SocketClient('filusdt', 25, 3720000); //'filusdt'
-new SocketClient('axsusdt', 26, 3725000); //'axsusdt'
-new SocketClient('audiousdt', 27, 3730000); //'audiousdt'
-new SocketClient('unfiusdt', 28, 3735000); //'unfiusdt'
-new SocketClient('grtusdt', 29, 3740000); //'grtusdt'
-new SocketClient('psgusdt', 30, 3745000); //'psgusdt'
-new SocketClient('litusdt', 31, 3750000); //'litusdt'
-new SocketClient('sfpusdt', 32, 3755000); //'sfpusdt'
-new SocketClient('cakeusdt', 33, 3760000); //'cakeusdt'
-new SocketClient('aliceusdt', 34, 3765000); //'aliceusdt'
-new SocketClient('ethusdt', 35, 3770000); //'ethusdt'
-new SocketClient('linkusdt', 36, 3775000); //'linkusdt'
-new SocketClient('trxusdt', 37, 3780000); //'trxusdt'
-new SocketClient('bnbusdt', 38, 3785000); //'bnbusdt'
-new SocketClient('troyusdt', 39, 3790000); //'troyusdt'
-new SocketClient('dotusdt', 40, 3795000); //'dotusdt'
-
-// if(process.env.VAL1 != '')
-// new SocketClient(process.env.VAL1, 3600000); //'btcusdt'
-// new SocketClient(process.env.VAL2, 3605000); //'xrpusdt'
-// new SocketClient(process.env.VAL3, 3610000); //'eosusdt'
-// new SocketClient(process.env.VAL4, 3615000); //'etcusdt'
-// new SocketClient(process.env.VAL5, 3620000); //'ltcusdt'
-// new SocketClient(process.env.VAL6, 3625000); //'fetusdt'
-// new SocketClient(process.env.VAL7, 3630000); //'omgusdt'
-// new SocketClient(process.env.VAL8, 3635000); //'maticusdt'
-// new SocketClient(process.env.VAL9, 3640000); //'oneusdt'
-// new SocketClient(process.env.VAL10, 3645000); //'ftmusdt'
-// new SocketClient(process.env.VAL11, 3650000); //'algousdt'
-// new SocketClient(process.env.VAL12, 3655000); //'dogeusdt'
-// new SocketClient(process.env.VAL13, 3660000); //'busdusdt'
-// new SocketClient(process.env.VAL14, 3665000); //'iotxusdt'
-// new SocketClient(process.env.VAL15, 3670000); //'ctxcusdt'
-// new SocketClient(process.env.VAL16, 3675000); //'compusdt'
-// new SocketClient(process.env.VAL17, 3680000); //'lrcusdt'
-// new SocketClient(process.env.VAL18, 3685000); //'sxpusdt'
-// new SocketClient(process.env.VAL19, 3690000); //'balusdt'
-// new SocketClient(process.env.VAL20, 3695000); //'sandusdt'
-// new SocketClient(process.env.VAL21, 3700000); //'ksmusdt'
-// new SocketClient(process.env.VAL22, 3705000); //'egldusdt'
-// new SocketClient(process.env.VAL23, 3710000); //'uniusdt'
-// new SocketClient(process.env.VAL24, 3715000); //'avaxusdt'
-// new SocketClient(process.env.VAL25, 3720000); //'filusdt'
-// new SocketClient(process.env.VAL26, 3725000); //'axsusdt'
-// new SocketClient(process.env.VAL27, 3730000); //'audiousdt'
-// new SocketClient(process.env.VAL28, 3735000); //'unfiusdt'
-// new SocketClient(process.env.VAL29, 3740000); //'grtusdt'
-// new SocketClient(process.env.VAL30, 3745000); //'psgusdt'
-// new SocketClient(process.env.VAL31, 3750000); //'litusdt'
-// new SocketClient(process.env.VAL32, 3755000); //'sfpusdt'
-// new SocketClient(process.env.VAL33, 3760000); //'cakeusdt'
-// new SocketClient(process.env.VAL34, 3765000); //'aliceusdt'
-// new SocketClient(process.env.VAL35, 3770000); //'ethusdt'
-// new SocketClient(process.env.VAL36, 3775000); //'linkusdt'
-// new SocketClient(process.env.VAL37, 3780000); //'trxusdt'
-// new SocketClient(process.env.VAL38, 3785000); //'bnbusdt'
-// new SocketClient(process.env.VAL39, 3790000); //'troyusdt'
-// new SocketClient(process.env.VAL40, 3795000); //'dotusdt'
+new SocketClient('1inchusdt', 1, 3600000); 
+new SocketClient('aaveusdt', 2, 3605000); 
+new SocketClient('acausdt', 3, 3610000); 
+new SocketClient('achusdt', 4, 3615000); 
+new SocketClient('acmusdt', 5, 3620000); 
+new SocketClient('adausdt', 6, 3625000); 
+new SocketClient('adxusdt', 7, 3630000); 
+new SocketClient('agldusdt', 8, 3635000); 
+new SocketClient('aionusdt', 9, 3640000); 
+new SocketClient('akrousdt', 10, 3645000); 
+new SocketClient('alcxusdt', 11, 3650000); 
+new SocketClient('algousdt', 12, 3655000); 
+new SocketClient('aliceusdt', 13, 3660000); 
+new SocketClient('alpacausdt', 14, 3665000); 
+new SocketClient('alphausdt', 15, 3670000);
+new SocketClient('alpineusdt', 16, 3675000); 
+new SocketClient('ampusdt', 17, 3680000); 
+// new SocketClient('ancusdt', 18, 3685000); 
+new SocketClient('ankrusdt', 19, 3690000); 
+new SocketClient('antusdt', 20, 3695000); 
+new SocketClient('apeusdt', 21, 3700000); 
+new SocketClient('api3usdt', 22, 3705000); 
+new SocketClient('aptusdt', 23, 3710000); 
+new SocketClient('ardrusdt', 24, 3715000); 
+new SocketClient('arpausdt', 25, 3720000); 
+new SocketClient('arusdt', 26, 3725000); 
+new SocketClient('asrusdt', 27, 3730000);
+new SocketClient('astrusdt', 28, 3735000); 
+new SocketClient('atausdt', 29, 3740000); 
+new SocketClient('atmusdt', 30, 3745000); 
+new SocketClient('atomusdt', 31, 3750000); 
+new SocketClient('auctionusdt', 32, 3755000); 
+new SocketClient('audiousdt', 33, 3760000); 
+new SocketClient('audusdt', 34, 3765000); 
+new SocketClient('autousdt', 35, 3770000); 
+new SocketClient('avausdt', 36, 3775000);
+new SocketClient('avaxusdt', 37, 3780000);
+new SocketClient('axsusdt', 38, 3785000); 
+new SocketClient('badgerusdt', 39, 3790000); 
+new SocketClient('bakeusdt', 40, 3795000); 
 
 
