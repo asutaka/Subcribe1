@@ -16,9 +16,9 @@ const SyncData = () => {
         len = handle.listArr4.length - 500;
         if(len > 0)
         handle.listArr4.splice(0, len);   
-        len = handle.listArr500.length - 500;
+        len = handle.listArr5.length - 500;
         if(len > 0)
-        handle.listArr500.splice(0, len);   
+        handle.listArr5.splice(0, len);   
         len = handle.listArr6.length - 500;
         if(len > 0)
         handle.listArr6.splice(0, len);   
@@ -46,9 +46,9 @@ const SyncData = () => {
         len = handle.listArr14.length - 500;
         if(len > 0)
         handle.listArr14.splice(0, len);   
-        len = handle.listArr1500.length - 500;
+        len = handle.listArr15.length - 500;
         if(len > 0)
-        handle.listArr1500.splice(0, len);   
+        handle.listArr15.splice(0, len);   
         len = handle.listArr16.length - 500;
         if(len > 0)
         handle.listArr16.splice(0, len);   
@@ -76,9 +76,9 @@ const SyncData = () => {
         len = handle.listArr24.length - 500;
         if(len > 0)
         handle.listArr24.splice(0, len);   
-        len = handle.listArr2500.length - 500;
+        len = handle.listArr25.length - 500;
         if(len > 0)
-        handle.listArr2500.splice(0, len);   
+        handle.listArr25.splice(0, len);   
         len = handle.listArr26.length - 500;
         if(len > 0)
         handle.listArr26.splice(0, len);   
@@ -106,9 +106,9 @@ const SyncData = () => {
         len = handle.listArr34.length - 500;
         if(len > 0)
         handle.listArr34.splice(0, len);   
-        len = handle.listArr3500.length - 500;
+        len = handle.listArr35.length - 500;
         if(len > 0)
-        handle.listArr3500.splice(0, len);   
+        handle.listArr35.splice(0, len);   
         len = handle.listArr36.length - 500;
         if(len > 0)
         handle.listArr36.splice(0, len);   
