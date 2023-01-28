@@ -18,7 +18,7 @@ cronjob.SyncData();
 app.post('/syncDataClient/:value', jsonParser,function (req, res) {
     try{
         handle.setFlag(req.params.value);
-        return res.status(200).json({msg: "success", code: -99 });
+        return res.status(200).json({msg: "success", code: 1 });
     }
     catch(e)
     {
