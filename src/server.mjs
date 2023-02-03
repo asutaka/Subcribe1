@@ -23,6 +23,13 @@ import Conn from './lib/database.js';
 //     console.log("Sym1", row);
 //   });
 
+// db.run(`DELETE FROM SYM1 WHERE E <= ?`, [20], function (error) {
+//   if (error) {
+//     return console.error(error.message);
+//   }
+//   console.log(`Row with the ID ${20} has been deleted`);
+// });
+
 var jsonParser = bodyParser.json()
 const PORT = process.env.PORT || 8000;
 const app = express();
