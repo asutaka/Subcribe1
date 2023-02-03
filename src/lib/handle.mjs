@@ -1,3 +1,5 @@
+import Conn from './lib/database.js';
+
 let arrCurrent = [];
 let arrMirror = [];
 

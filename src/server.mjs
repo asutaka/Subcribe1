@@ -3,6 +3,25 @@ import express from "express";
 import cronjob from './cronjob.mjs';
 import handle from "./lib/handle.mjs";
 import bodyParser from 'body-parser';
+import Conn from './lib/database.js';
+
+// Conn().run(
+//     `INSERT INTO SYM1 (Symbol, E, C, O, H, L, V, Q, UT, State) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+//     ['name', 1,2,3,4,5,6,7,8,1],
+//     function (error) {
+//       if (error) {
+//         console.error(error.message);
+//       }
+//       console.log(`Inserted a row with the ID: ${this.lastID}`);
+//     }
+//   );
+
+// Conn().each(`SELECT * FROM SYM1`, (error, row) => {
+//     if (error) {
+//       throw new Error(error.message);
+//     }
+//     console.log("Sym1", row);
+//   });
 
 var jsonParser = bodyParser.json()
 const PORT = process.env.PORT || 8000;
