@@ -1,4 +1,4 @@
-import Conn from './lib/database.js';
+import Conn from "./database.js";
 
 let arrCurrent = [];
 let arrMirror = [];
