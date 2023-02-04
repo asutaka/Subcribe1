@@ -3,32 +3,7 @@ import express from "express";
 import cronjob from './cronjob.mjs';
 import handle from "./lib/handle.mjs";
 import bodyParser from 'body-parser';
-import Conn from './lib/database.js';
-
-// Conn().run(
-//     `INSERT INTO SYM1 (Symbol, E, C, O, H, L, V, Q, UT, State) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-//     ['name', 1,2,3,4,5,6,7,8,1],
-//     function (error) {
-//       if (error) {
-//         console.error(error.message);
-//       }
-//       console.log(`Inserted a row with the ID: ${this.lastID}`);
-//     }
-//   );
-
-// Conn().each(`SELECT * FROM SYM1`, (error, row) => {
-//     if (error) {
-//       throw new Error(error.message);
-//     }
-//     console.log("Sym1", row);
-//   });
-
-// db.run(`DELETE FROM SYM1 WHERE E <= ?`, [20], function (error) {
-//   if (error) {
-//     return console.error(error.message);
-//   }
-//   console.log(`Row with the ID ${20} has been deleted`);
-// });
+import Conn from "../database.js";
 
 var jsonParser = bodyParser.json()
 const PORT = process.env.PORT || 8000;
@@ -37,7 +12,7 @@ app.get('/', async (req, res)  => {
     res.status(200).json({msg: "hello world", responseCode: 1 });
 })
 
-app.listen(PORT, () => console.log('server running!'));
+app.listen(PORT, () => console.log("server listen port: " + PORT));
 //Job
 cronjob.SyncData();
 //API
@@ -57,86 +32,40 @@ app.post('/syncDataClientVal', jsonParser,function (req, res) {
     try{
         var data = req.body;
         var num = data.num;
-        if(num == 1)
-        handle.listArr1 = data.data;
-        if(num == 2)
-        handle.listArr2 = data.data;
-        if(num == 3)
-        handle.listArr3 = data.data;
-        if(num == 4)
-        handle.listArr4 = data.data;
-        if(num == 5)
-        handle.listArr5 = data.data;
-        if(num == 6)
-        handle.listArr6 = data.data;
-        if(num == 7)
-        handle.listArr7 = data.data;
-        if(num == 8)
-        handle.listArr8 = data.data;
-        if(num == 9)
-        handle.listArr9 = data.data;
-        if(num == 10)
-        handle.listArr10 = data.data;
-        if(num == 11)
-        handle.listArr11 = data.data;
-        if(num == 12)
-        handle.listArr12 = data.data;
-        if(num == 13)
-        handle.listArr13 = data.data;
-        if(num == 14)
-        handle.listArr14 = data.data;
-        if(num == 15)
-        handle.listArr15 = data.data;
-        if(num == 16)
-        handle.listArr16 = data.data;
-        if(num == 17)
-        handle.listArr17 = data.data;
-        if(num == 18)
-        handle.listArr18 = data.data;
-        if(num == 19)
-        handle.listArr19 = data.data;
-        if(num == 20)
-        handle.listArr20 = data.data;
-        if(num == 21)
-        handle.listArr21 = data.data;
-        if(num == 22)
-        handle.listArr22 = data.data;
-        if(num == 23)
-        handle.listArr23 = data.data;
-        if(num == 24)
-        handle.listArr24 = data.data;
-        if(num == 25)
-        handle.listArr25 = data.data;
-        if(num == 26)
-        handle.listArr26 = data.data;
-        if(num == 27)
-        handle.listArr27= data.data;
-        if(num == 28)
-        handle.listArr28 = data.data;
-        if(num == 29)
-        handle.listArr29 = data.data;
-        if(num == 30)
-        handle.listArr30 = data.data;
-        if(num == 31)
-        handle.listArr31 = data.data;
-        if(num == 32)
-        handle.listArr32 = data.data;
-        if(num == 33)
-        handle.listArr33 = data.data;
-        if(num == 34)
-        handle.listArr34 = data.data;
-        if(num == 35)
-        handle.listArr35 = data.data;
-        if(num == 36)
-        handle.listArr36 = data.data;
-        if(num == 37)
-        handle.listArr37 = data.data;
-        if(num == 38)
-        handle.listArr38 = data.data;
-        if(num == 39)
-        handle.listArr39 = data.data;
-        if(num == 40)
-        handle.listArr40 = data.data;
+        var query = "INSERT INTO SYM"+ num +" (Symbol, E, C, O, H, L, V, Q, UT, State) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        // console.log("data.data", data.data);
+        const sleep = ms =>
+        new Promise(res => {
+            setTimeout(res, ms)
+        })
+
+        const myPromise = element =>
+        sleep(10).then(async () => {
+            try{
+                Conn().run(query, [element.Symbol, element.E, element.C, element.O, element.H, element.L, element.V, element.Q, element.UT, element.State],
+                    function (error) {
+                        if (error) {
+                            console.error(error.message);
+                        }
+                    }
+                );
+            }
+            catch(e)
+            {
+                console.log("[EXCEPTION] Database cannot insert record| " + e);
+            }
+        })
+
+        const forEachSeries = async (iterable, action) => {
+            for (const x of iterable) {
+                await action(x)
+            }
+        }
+
+        forEachSeries(data.data, myPromise)
+        .then(() => {
+            // console.log('all done!')
+        })
         return res.status(200).json({msg: "success", code: 1 });
     }
     catch(e)
@@ -156,86 +85,19 @@ app.get('/mirror', function(req, res) {
 
 app.get('/symbol/:num', function(req, res) {
     var num = req.params.num;
-    if(num == 1)
-    return res.status(200).json({data: handle.listArr1 });
-    if(num == 2)
-    return res.status(200).json({data: handle.listArr2 });
-    if(num == 3)
-    return res.status(200).json({data: handle.listArr3 });
-    if(num == 4)
-    return res.status(200).json({data: handle.listArr4 });
-    if(num == 5)
-    return res.status(200).json({data: handle.listArr5 });
-    if(num == 6)
-    return res.status(200).json({data: handle.listArr6 });
-    if(num == 7)
-    return res.status(200).json({data: handle.listArr7 });
-    if(num == 8)
-    return res.status(200).json({data: handle.listArr8 });
-    if(num == 9)
-    return res.status(200).json({data: handle.listArr9 });
-    if(num == 10)
-    return res.status(200).json({data: handle.listArr10 });
-    if(num == 11)
-    return res.status(200).json({data: handle.listArr11 });
-    if(num == 12)
-    return res.status(200).json({data: handle.listArr12 });
-    if(num == 13)
-    return res.status(200).json({data: handle.listArr13 });
-    if(num == 14)
-    return res.status(200).json({data: handle.listArr14 });
-    if(num == 15)
-    return res.status(200).json({data: handle.listArr15 });
-    if(num == 16)
-    return res.status(200).json({data: handle.listArr16 });
-    if(num == 17)
-    return res.status(200).json({data: handle.listArr17 });
-    if(num == 18)
-    return res.status(200).json({data: handle.listArr18 });
-    if(num == 19)
-    return res.status(200).json({data: handle.listArr19 });
-    if(num == 20)
-    return res.status(200).json({data: handle.listArr20 });
-    if(num == 21)
-    return res.status(200).json({data: handle.listArr21 });
-    if(num == 22)
-    return res.status(200).json({data: handle.listArr22 });
-    if(num == 23)
-    return res.status(200).json({data: handle.listArr23 });
-    if(num == 24)
-    return res.status(200).json({data: handle.listArr24 });
-    if(num == 25)
-    return res.status(200).json({data: handle.listArr25 });
-    if(num == 26)
-    return res.status(200).json({data: handle.listArr26 });
-    if(num == 27)
-    return res.status(200).json({data: handle.listArr27 });
-    if(num == 28)
-    return res.status(200).json({data: handle.listArr28 });
-    if(num == 29)
-    return res.status(200).json({data: handle.listArr29 });
-    if(num == 30)
-    return res.status(200).json({data: handle.listArr30 });
-    if(num == 31)
-    return res.status(200).json({data: handle.listArr31 });
-    if(num == 32)
-    return res.status(200).json({data: handle.listArr32 });
-    if(num == 33)
-    return res.status(200).json({data: handle.listArr33 });
-    if(num == 34)
-    return res.status(200).json({data: handle.listArr34 });
-    if(num == 35)
-    return res.status(200).json({data: handle.listArr35 });
-    if(num == 36)
-    return res.status(200).json({data: handle.listArr36 });
-    if(num == 37)
-    return res.status(200).json({data: handle.listArr37 });
-    if(num == 38)
-    return res.status(200).json({data: handle.listArr38 });
-    if(num == 39)
-    return res.status(200).json({data: handle.listArr39 });
-    if(num == 40)
-    return res.status(200).json({data: handle.listArr40 });
+    var query = "SELECT * FROM SYM" + num;
+    try{
+        Conn().all(query, (error, rows) => {
+            if (error) {
+              throw new Error(error.message);
+            }
+            return res.status(200).json({data: rows });
+          });
+    }
+    catch(e)
+    {
+        return res.status(200).json({data: [] });
+    } 
 });
 
 new SocketClient('1inchusdt', 1, 3600000); 
