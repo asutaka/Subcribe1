@@ -89,11 +89,6 @@ const listArr37 = arr37;
 const listArr38 = arr38;
 const listArr39 = arr39;
 const listArr40 = arr40;
-let flag = false;
-
-const setFlag = (val) => {
-    flag = val;
-}
 
 const handleData = async (symbol, num, data) => {
     try{
@@ -113,9 +108,6 @@ const handleData = async (symbol, num, data) => {
                 arrMirror.splice(index, 1);
             arrMirror.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 
 
-            if(flag == true){
-                return;
-            }
             if(num == 1)
             {
                 arr1.push({"name": symbol, "e": _e, "c": _c, "o": _o, "h": _h, "l": _l, "v": _v, "q": _q, "ut": _ut, "state": _state }); 

@@ -14,18 +14,6 @@ app.get('/', async (req, res)  => {
 app.listen(PORT, () => console.log('server running!'));
 //Job
 cronjob.SyncData();
-//API
-app.post('/syncDataClient/:value', jsonParser,function (req, res) {
-    try{
-        handle.setFlag(req.params.value);
-        return res.status(200).json({msg: "success", code: 1 });
-    }
-    catch(e)
-    {
-        handle.setFlag(req.params.value);
-        return res.status(200).json({msg: "error", code: -99 });
-    }
-});
 
 app.post('/syncDataClientVal', jsonParser,function (req, res) {
     try{
