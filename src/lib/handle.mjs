@@ -283,7 +283,7 @@ const handleData = async (symbol, num, data) => {
     }
 }
 
-export default { handleData, setFlag,  listCurrent, listMirror, 
+export default { handleData, listCurrent, listMirror, 
     listArr1, listArr2, listArr3, listArr4, listArr5, listArr6, listArr7, listArr8, listArr9, listArr10,
     listArr11, listArr12, listArr13, listArr14, listArr15, listArr16, listArr17, listArr18, listArr19, listArr20,
     listArr21, listArr22, listArr23, listArr24, listArr25, listArr26, listArr27, listArr28, listArr29, listArr30,
