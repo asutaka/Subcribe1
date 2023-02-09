@@ -20,85 +20,205 @@ app.post('/syncDataClientVal', jsonParser,function (req, res) {
         var data = req.body;
         var num = data.num;
         if(num == 1)
-        handle.listArr1 = data.data;
+        {
+            handle.listArr1.length = 0;
+            handle.listArr1.push(...data.data);
+        }
         if(num == 2)
-        handle.listArr2 = data.data;
+        {
+            handle.listArr2.length = 0;
+            handle.listArr2.push(...data.data);
+        }
         if(num == 3)
-        handle.listArr3 = data.data;
+        {
+            handle.listArr3.length = 0;
+            handle.listArr3.push(...data.data);
+        }
         if(num == 4)
-        handle.listArr4 = data.data;
+        {
+            handle.listArr4.length = 0;
+            handle.listArr4.push(...data.data);
+        }
         if(num == 5)
-        handle.listArr5 = data.data;
+        {
+            handle.listArr5.length = 0;
+            handle.listArr5.push(...data.data);
+        }
         if(num == 6)
-        handle.listArr6 = data.data;
+        {
+            handle.listArr6.length = 0;
+            handle.listArr6.push(...data.data);
+        }
         if(num == 7)
-        handle.listArr7 = data.data;
+        {
+            handle.listArr7.length = 0;
+            handle.listArr7.push(...data.data);
+        }
         if(num == 8)
-        handle.listArr8 = data.data;
+        {
+            handle.listArr8.length = 0;
+            handle.listArr8.push(...data.data);
+        }
         if(num == 9)
-        handle.listArr9 = data.data;
+        {
+            handle.listArr9.length = 0;
+            handle.listArr9.push(...data.data);
+        }
         if(num == 10)
-        handle.listArr10 = data.data;
+        {
+            handle.listArr10.length = 0;
+            handle.listArr10.push(...data.data);
+        }
         if(num == 11)
-        handle.listArr11 = data.data;
+        {
+            handle.listArr11.length = 0;
+            handle.listArr11.push(...data.data);
+        }
         if(num == 12)
-        handle.listArr12 = data.data;
+        {
+            handle.listArr12.length = 0;
+            handle.listArr12.push(...data.data);
+        }
         if(num == 13)
-        handle.listArr13 = data.data;
+        {
+            handle.listArr13.length = 0;
+            handle.listArr13.push(...data.data);
+        }
         if(num == 14)
-        handle.listArr14 = data.data;
+        {
+            handle.listArr14.length = 0;
+            handle.listArr14.push(...data.data);
+        }
         if(num == 15)
-        handle.listArr15 = data.data;
+        {
+            handle.listArr15.length = 0;
+            handle.listArr15.push(...data.data);
+        }
         if(num == 16)
-        handle.listArr16 = data.data;
+        {
+            handle.listArr16.length = 0;
+            handle.listArr16.push(...data.data);
+        }
         if(num == 17)
-        handle.listArr17 = data.data;
+        {
+            handle.listArr17.length = 0;
+            handle.listArr17.push(...data.data);
+        }
         if(num == 18)
-        handle.listArr18 = data.data;
+        {
+            handle.listArr18.length = 0;
+            handle.listArr18.push(...data.data);
+        }
         if(num == 19)
-        handle.listArr19 = data.data;
+        {
+            handle.listArr19.length = 0;
+            handle.listArr19.push(...data.data);
+        }
         if(num == 20)
-        handle.listArr20 = data.data;
+        {
+            handle.listArr20.length = 0;
+            handle.listArr20.push(...data.data);
+        }
         if(num == 21)
-        handle.listArr21 = data.data;
+        {
+            handle.listArr21.length = 0;
+            handle.listArr21.push(...data.data);
+        }
         if(num == 22)
-        handle.listArr22 = data.data;
+        {
+            handle.listArr22.length = 0;
+            handle.listArr22.push(...data.data);
+        }
         if(num == 23)
-        handle.listArr23 = data.data;
+        {
+            handle.listArr23.length = 0;
+            handle.listArr23.push(...data.data);
+        }
         if(num == 24)
-        handle.listArr24 = data.data;
+        {
+            handle.listArr24.length = 0;
+            handle.listArr24.push(...data.data);
+        }
         if(num == 25)
-        handle.listArr25 = data.data;
+        {
+            handle.listArr25.length = 0;
+            handle.listArr25.push(...data.data);
+        }
         if(num == 26)
-        handle.listArr26 = data.data;
+        {
+            handle.listArr26.length = 0;
+            handle.listArr26.push(...data.data);
+        }
         if(num == 27)
-        handle.listArr27= data.data;
+        {
+            handle.listArr27.length = 0;
+            handle.listArr27.push(...data.data);
+        }
         if(num == 28)
-        handle.listArr28 = data.data;
+        {
+            handle.listArr28.length = 0;
+            handle.listArr28.push(...data.data);
+        }
         if(num == 29)
-        handle.listArr29 = data.data;
+        {
+            handle.listArr29.length = 0;
+            handle.listArr29.push(...data.data);
+        }
         if(num == 30)
-        handle.listArr30 = data.data;
+        {
+            handle.listArr30.length = 0;
+            handle.listArr30.push(...data.data);
+        }
         if(num == 31)
-        handle.listArr31 = data.data;
+        {
+            handle.listArr31.length = 0;
+            handle.listArr31.push(...data.data);
+        }
         if(num == 32)
-        handle.listArr32 = data.data;
+        {
+            handle.listArr32.length = 0;
+            handle.listArr32.push(...data.data);
+        }
         if(num == 33)
-        handle.listArr33 = data.data;
+        {
+            handle.listArr33.length = 0;
+            handle.listArr33.push(...data.data);
+        }
         if(num == 34)
-        handle.listArr34 = data.data;
+        {
+            handle.listArr34.length = 0;
+            handle.listArr34.push(...data.data);
+        }
         if(num == 35)
-        handle.listArr35 = data.data;
+        {
+            handle.listAlistArr35rr17.length = 0;
+            handle.listArr35.push(...data.data);
+        }
         if(num == 36)
-        handle.listArr36 = data.data;
+        {
+            handle.listArr36.length = 0;
+            handle.listArr36.push(...data.data);
+        }
         if(num == 37)
-        handle.listArr37 = data.data;
+        {
+            handle.listArr37.length = 0;
+            handle.listArr37.push(...data.data);
+        }
         if(num == 38)
-        handle.listArr38 = data.data;
+        {
+            handle.listArr38.length = 0;
+            handle.listArr38.push(...data.data);
+        }
         if(num == 39)
-        handle.listArr39 = data.data;
+        {
+            handle.listArr39.length = 0;
+            handle.listArr39.push(...data.data);
+        }
         if(num == 40)
-        handle.listArr40 = data.data;
+        {
+            handle.listArr40.length = 0;
+            handle.listArr40.push(...data.data);
+        }
         return res.status(200).json({msg: "success", code: 1 });
     }
     catch(e)
