@@ -320,6 +320,90 @@ app.get('/symbol/:num', function(req, res) {
     return res.status(200).json({data: handle.listArr40 });
 });
 
+app.get('/count/:num', function(req, res) {
+    var num = req.params.num;
+    if(num == 1)
+    return res.status(200).json({count: handle.listArr1.length });
+    if(num == 2)
+    return res.status(200).json({count: handle.listArr2.length });
+    if(num == 3)
+    return res.status(200).json({count: handle.listArr3.length });
+    if(num == 4)
+    return res.status(200).json({count: handle.listArr4.length });
+    if(num == 5)
+    return res.status(200).json({count: handle.listArr5.length });
+    if(num == 6)
+    return res.status(200).json({count: handle.listArr6.length });
+    if(num == 7)
+    return res.status(200).json({count: handle.listArr7.length });
+    if(num == 8)
+    return res.status(200).json({count: handle.listArr8.length });
+    if(num == 9)
+    return res.status(200).json({count: handle.listArr9.length });
+    if(num == 10)
+    return res.status(200).json({count: handle.listArr10.length });
+    if(num == 11)
+    return res.status(200).json({count: handle.listArr11.length });
+    if(num == 12)
+    return res.status(200).json({count: handle.listArr12.length });
+    if(num == 13)
+    return res.status(200).json({count: handle.listArr13.length });
+    if(num == 14)
+    return res.status(200).json({count: handle.listArr14.length });
+    if(num == 15)
+    return res.status(200).json({count: handle.listArr15.length });
+    if(num == 16)
+    return res.status(200).json({count: handle.listArr16.length });
+    if(num == 17)
+    return res.status(200).json({count: handle.listArr17.length });
+    if(num == 18)
+    return res.status(200).json({count: handle.listArr18.length });
+    if(num == 19)
+    return res.status(200).json({count: handle.listArr19.length });
+    if(num == 20)
+    return res.status(200).json({count: handle.listArr20.length });
+    if(num == 21)
+    return res.status(200).json({count: handle.listArr21.length });
+    if(num == 22)
+    return res.status(200).json({count: handle.listArr22.length });
+    if(num == 23)
+    return res.status(200).json({count: handle.listArr23.length });
+    if(num == 24)
+    return res.status(200).json({count: handle.listArr24.length });
+    if(num == 25)
+    return res.status(200).json({count: handle.listArr25.length });
+    if(num == 26)
+    return res.status(200).json({count: handle.listArr26.length });
+    if(num == 27)
+    return res.status(200).json({count: handle.listArr27.length });
+    if(num == 28)
+    return res.status(200).json({count: handle.listArr28.length });
+    if(num == 29)
+    return res.status(200).json({count: handle.listArr29.length });
+    if(num == 30)
+    return res.status(200).json({count: handle.listArr30.length });
+    if(num == 31)
+    return res.status(200).json({count: handle.listArr31.length });
+    if(num == 32)
+    return res.status(200).json({count: handle.listArr32.length });
+    if(num == 33)
+    return res.status(200).json({count: handle.listArr33.length });
+    if(num == 34)
+    return res.status(200).json({count: handle.listArr34.length });
+    if(num == 35)
+    return res.status(200).json({count: handle.listArr35.length });
+    if(num == 36)
+    return res.status(200).json({count: handle.listArr36.length });
+    if(num == 37)
+    return res.status(200).json({count: handle.listArr37.length });
+    if(num == 38)
+    return res.status(200).json({count: handle.listArr38.length });
+    if(num == 39)
+    return res.status(200).json({count: handle.listArr39.length });
+    if(num == 40)
+    return res.status(200).json({count: handle.listArr40.length });
+});
+
 new SocketClient('1inchusdt', 1, 3600000); 
 new SocketClient('aaveusdt', 2, 3605000); 
 new SocketClient('acausdt', 3, 3610000); 
