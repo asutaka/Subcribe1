@@ -4,7 +4,7 @@ let arrMirror = [];
 const listCurrent = arrCurrent;
 const listMirror = arrMirror;
 
-const handleData = async (symbol, num, data) => {
+const handleData = async (symbol, data) => {
     try{
         let _e = data.k.t;
         let _c = data.k.c;
