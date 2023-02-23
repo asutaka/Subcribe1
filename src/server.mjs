@@ -18,6 +18,10 @@ app.get('/mirror', function(req, res) {
     res.status(200).json({data: handle.listMirror });
 });
 
+app.get('/time', function(req, res) {
+    res.status(200).json({data: (new Date().getTime()) });
+});
+
 new SocketClient('1inchusdt', 3600000); 
 new SocketClient('aaveusdt', 3601000); 
 new SocketClient('acausdt', 3602000); 
